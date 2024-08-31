@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bliend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero-header" id="Home">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-star"></i> <!-- Use appropriate Font Awesome icon -->
+                    <div class="logo-text">Bliend</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="cursor-dot" data-cursor-dot></div>
+                    <div class="cursor-outline" data-cursor-outline></div>
+                    <ul class="navlinks">
+                        <li><a href="#advertisement">Advertisement</a></li>
+                        <li><a href="#marketing">Marketing</a></li>
+                        <li><a href="#software">Software</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- First Blank Section -->
+            <section id="BlankPage">
+                <!-- Blank content here -->
+            </section>
+            <!-- Second Section with About Us Content -->
+            <section id="AboutUs">
+                <div class="main-container">
+                    <div class="image">
+                        <img src=" " alt="Bliend Logo">
+                    </div>
+                    <div class="content">
+                        <h1>ABOUT US</h1>
+                        <p><strong>Transform visions into compelling stories that captivate and inspire with <span class="gradient-text">Bliend</span>.</strong> Our content isn’t just written—it’s crafted with precision, blending creativity and strategy to deliver unmatched advertisement, digital marketing, and software development solutions. Each word, image, and line of code is meticulously designed to engage, excite, and elevate your brand. Whether it’s digital marketing, banner placement, or web development, <span class="gradient-text">Bliend</span> brings your ideas to life with unparalleled creativity and precision. Choose <span class="gradient-text">Bliend</span> to elevate your brand and achieve remarkable results.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- New Section for OUR SERVICES -->
+            <section id="OurServices">
+                <div class="services-container">
+                    <h1 class="services-heading">OUR SERVICES</h1>
+                    <div class="services-box">
+                        
+                    </div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                   
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="box-content">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class="bx bx-left-arrow-alt"></i>
+                        </div>
+                        <div class="swiper-button-next">
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- New Blank Section -->
+            <section id="NewBlankPage">
+                <!-- Blank content here -->
+            </section>
+            <!-- Fifth Section with Advertisement Content -->
+            <section id="Advertisement">
+                <div class="advertisement-container">
+                    <div class="advertisement-left">
+                        <h2 class="asteraceae">OUTDOOR ADVERTISING</h2>
+                        <h1 class="title">Bill Boards</h1>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam molestias dolorem eum rem error ratione labore saepe mollitia necessitatibus repellendus. Ipsa cumque dolorum vero blanditiis repellat inventore magnam unde corporis suscipit? Praesentium, debitis perspiciatis sapiente rerum quasi modi quo corporis.
+                        </p>
+                     </div>
+                     <div class="advertisement-middle">
+                        <img src="image.png" alt="Image" class="middle-image">
+                    </div>
+                    <div class="advertisement-right">
+                        <img src="your-image-source-here.jpg" alt="Image" class="main-image">
+                        <div class="details-box">
+                            <div class="label-box">
+                                <label for="locations">Available Locations</label>
+                            </div>
+                           
+                           
+                        </div>
+                        <h1 class="location-names">Trichy,Coimbatore,Chennai,Pondicherry</h1>
+                        <p class="details-text">
+                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates harum reprehenderit magnam ducimus, cum ea.
+                        </p>
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper-container", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 4,
+                slideShadows: true
+            },
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            keyboard: {
+                enabled: true
+            },
+            mousewheel: {
+                thresholdDelta: 70
+            },
+            breakpoints: {
+                560: {
+                    slidesPerView: 2.5
+                },
+                768: {
+                    slidesPerView: 3
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        });
+
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+        window.addEventListener("mousemove", function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = posX + 'px';
+            cursorDot.style.top = posY + 'px';
+
+            cursorOutline.style.left = posX + 'px';
+            cursorOutline.style.top = posY + 'px';
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        const toggleBtn = document.querySelector('.togglebtn');
+        const navLinks = document.querySelector('.navlinks');
+
+        toggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

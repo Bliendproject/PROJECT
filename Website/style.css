@@ -1,0 +1,560 @@
+@font-face {
+    font-family: 'Mosafin';
+    src: url('Mosafin-Medium.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Bold.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Mosafin', sans-serif;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .navlinks {
+    font-family: 'Montserrat', sans-serif; /* Font for headings */
+    font-weight: 900; /* Adjust weight if needed */
+}
+p{
+    font-family:'Mosafin';
+    font-weight: 200;
+}
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    cursor: none;
+}
+
+
+
+.heading-container {
+    margin-bottom: 20px; /* Space between the heading and the rest of the content */
+}
+
+.advertisement-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff; /* Adjust the color as needed */
+}
+.advertisement-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000; /* black background */
+    color: #fff; /* white text */
+}
+
+.advertisement-left {
+    width: 30%;
+    margin-left: -70px;
+}
+
+.asteraceae {
+    font-size: 1em;
+    color: white; /* Gray color for family name */
+}
+
+.title {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+
+.advertisement-right {
+    width: 35%;
+    text-align: right;
+    margin-right: -65px;
+}
+
+
+
+.label-box {
+    background-color: #007bff; /* Blue background for the label box */
+    padding: 10px; /* Padding inside the label box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.5); /* Blue box shadow */
+    display: inline-block; /* Shrinks to fit content */
+}
+
+.details-box label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0; /* No margin around the label */
+    color: white; /* White text color for the label */
+}
+
+.location-names {
+    font-family: 'Montserrat', sans-serif; /* Ensure font consistency */
+    font-size: 18px; /* Adjust size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set text color to white */
+    margin-top: 10px; /* Space between the label box and city names */
+   padding: 10px; /* Optional: Padding to add space around the text */
+   text-align: center; /* Center align the text */
+}
+
+
+
+
+
+
+.main-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.details-box {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.location-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background:linear-gradient(45deg, #1fcbff, #2a26ff);
+    color: #000; /* Text color */
+    position: relative; /* Needed for custom arrow positioning */
+}
+.details-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 90px;
+}
+
+.location-item {
+    padding: 10px 20px;
+    background-color: #fff; /* White background for the location names */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Text color */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.location-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.location-select:focus {
+    border-color:white;
+    background-color: white;
+    color:black; 
+    outline: none;
+}
+.details-text {
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.view-detail {
+    background-color: #444; /* dark gray button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+    background-color:white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero header {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #222;
+}
+
+.wrapper {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 35px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color:black; /* Adjust background as needed */
+}
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
+
+nav .togglebtn {
+    display: none;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    background-color: transparent;
+}
+nav .togglebtn.bounce .bar {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+nav .togglebtn.bounce:hover .bar {
+    transform: scaleX(1.2);
+}
+nav .togglebtn i {
+    font-size: 28px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+nav .navlinks {
+    list-style-type: none;
+    display: flex;
+    transition: background-color 0.3s ease;
+}
+
+nav .navlinks li {
+    display: inline-block;
+    font-size: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-color: white;
+    color: white;
+    background: transparent;
+    border-radius: 20px;
+    box-shadow: #007AFF;
+    margin-right: 20px;
+   
+
+}
+nav .navlinks li:hover {
+    transform: translateY(-5px); /* Lifts the link slightly on hover */
+}
+
+
+nav .navlinks li a {
+    color: white;
+    margin-right: 7rem;
+    position: relative;
+    padding: 10px;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+nav .navlinks li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #007AFF;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1; /* Place behind the text */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+nav .navlinks li a:hover::before,
+nav .navlinks li a:focus::before  {
+    transform: scaleX(1); /* Expands the box effect on hover */
+}
+#BlankPage {
+    height: 100vh; /* Full viewport height */
+}
+
+/* About Us Section */
+#AboutUs {
+    padding: 50px 0; /* Add some padding to separate it from the header */
+}
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee; /* Background color of the box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    height: 200px; /* Adjust height as needed */
+    width: 300px; /* Adjust width as needed */
+}
+.box-content {
+    text-align: center;
+    font-size: 18px;
+    color: #333; /* Text color */
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+}
+
+/* Gradient Text for Specific Span */
+.gradient-text {
+    background: linear-gradient(45deg, #1fcbff, #2a26ff); /* Define your gradient colors */
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* For other browsers */
+    color: transparent; /* Make text color transparent so gradient is visible */
+    font-weight: 900; /* Optional: Adjust weight if needed */
+}
+
+.swiper-container{
+    position: relative;
+
+}
+
+.swiper{
+    width: 100%;
+    padding: 60px 0 95px 0;
+}
+
+
+.swiper-slide{
+    width: 10rem;
+    height: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    position: relative;
+}
+.swiper-slide .slide-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    width: 100%;
+}
+.swiper-slide .slide-content img{width:100%;border-radius: 10px;}
+.swiper-button-prev{
+    background: white;
+    border-radius: 50%;
+    top: 47%;
+    left: -30px;
+    width: 50px;
+    height:50px;
+    box-shadow: 0px 2px 11px #007AFF;
+}
+.swiper-button-prev::after{content: "";}
+.swiper-button-prev .bx{font-size:25px;}
+.swiper-button-next{
+    background: white;
+    border-radius: 50%;
+    top: 47%;
+    right: -30px;
+    width: 50px;
+    height:50px;
+    box-shadow: 0px 2px 11px  #007AFF;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main-container .image{
+    width: 400px;
+    height: 70vh;
+    border-radius: 0%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #007AFF;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 100%;
+}
+.main-container .image:hover{
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%{
+        scale:1;
+    }
+    50%{
+        scale:1.05;
+    }
+    100%{
+        scale: 1;
+    }
+}
+.main-container .content{
+    color: white;
+    font-family: 'Confine';
+    font: url(Mosafin-Medium.ttf);
+    width: 40%;
+    min-height: 100px;
+
+}
+.content h1, /* If "About Us" is an h1 element */
+.content h2 { /* If "About Us" is an h2 element */
+    font-size: 36px; /* Adjust this size as needed */
+    font-weight: 600; /* Optional: Adjust weight for better visibility */
+}
+
+
+.content p{
+    font-size:21px;
+    margin: 10px 0;
+    font-weight: 200;
+    line-height: 1.5;
+
+}
+/* Styles for the Our Services Section */
+#OurServices {
+    padding: 190px 0;
+    background-color:black; /* Matching background color */
+}
+
+.services-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center; /* Center content */
+}
+
+.services-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    nav .togglebtn {
+        display: block;
+    }
+   
+
+    nav .navlinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        z-index: 4;
+    }
+
+    nav .navlinks.show {
+        display: flex;
+    }
+
+    nav .navlinks li {
+        display: block;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+    }
+
+    nav .navlinks li a {
+        margin: 0;
+        color: white;
+        transition: color 0.3s ease;
+    }
+    .main-container {
+        flex-direction: column; /* Stack the image and content vertically */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .main-container .image {
+        width: 300px; /* Adjust size on small screens */
+        height: 300px;
+    }
+
+
+    /* Content Responsive Adjustments */
+    .main-container .content {
+        width: 80%; /* Take up more space on mobile screens */
+        font-size: 18px;
+    }
+
+}
+/* Keyframes for fading in the navigation links */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
